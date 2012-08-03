@@ -1,0 +1,40 @@
+html,
+#map {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  height: auto;
+}
+
+#map {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  right: 300px;
+  border-right: 10px solid #400000;
+}
+
+#map-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#content-pane {
+  float: right;
+  width: 300px;
+}
+
+#content-pane > * {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.site-head {
+  position: fixed;
+  top: 20px;
+  right: 310px;
+  width: auto !important;
+  z-index: 10;
+}

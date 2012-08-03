@@ -1,0 +1,159 @@
+/*
+  WYSIWYG & POST TYPOGRAPHY ----------------------
+  Add the class wysiwyg to the parent element 
+  containing the wysiwyg output.
+*/
+
+.wysiwyg * {
+  line-height: 1.4em;
+}
+
+/* Spacing between elements */
+.wysiwyg h1,
+.wysiwyg h2,
+.wysiwyg h3,
+.wysiwyg h4,
+.wysiwyg h5,
+.wysiwyg h6,
+.wysiwyg div,
+.wysiwyg p,
+.wysiwyg ul,
+.wysiwyg ol,
+.wysiwyg blockquote,
+.wysiwyg pre code {
+  margin-top: 1em;
+}
+.wysiwyg h1 + p,
+.wysiwyg h2 + p,
+.wysiwyg h3 + p,
+.wysiwyg h4 + p,
+.wysiwyg h5 + p,
+.wysiwyg h6 + p,
+.wysiwyg h1 + div,
+.wysiwyg h2 + div,
+.wysiwyg h3 + div,
+.wysiwyg h4 + div,
+.wysiwyg h5 + div,
+.wysiwyg h6 + div,
+.wysiwyg h1 + ul,
+.wysiwyg h2 + ul,
+.wysiwyg h3 + ul,
+.wysiwyg h4 + ul,
+.wysiwyg h5 + ul,
+.wysiwyg h6 + ul,
+.wysiwyg h1 + ol,
+.wysiwyg h2 + ol,
+.wysiwyg h3 + ol,
+.wysiwyg h4 + ol,
+.wysiwyg h5 + ol,
+.wysiwyg h6 + ol,
+.wysiwyg h1:first-child,
+.wysiwyg h2:first-child,
+.wysiwyg h3:first-child,
+.wysiwyg h4:first-child,
+.wysiwyg h5:first-child,
+.wysiwyg h6:first-child,
+.wysiwyg div:first-child,
+.wysiwyg p:first-child,
+.wysiwyg ul:first-child,
+.wysiwyg ol:first-child,
+.wysiwyg blockquote:first-child,
+.wysiwyg pre code:first-child {
+  margin-top: 0;
+}
+
+/* Lists */
+.wysiwyg ul,
+.wysiwyg ol {
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+.wysiwyg ol {
+  list-style: decimal;
+}
+
+.wysiwyg ul {
+  list-style: circle;
+}
+
+.wysiwyg li {
+  margin-top: 0.3em;
+}
+.wysiwyg li:first-child {
+  margin-top: 0;
+}
+
+/* Headers */
+.wysiwyg h1,
+.wysiwyg h2,
+.wysiwyg h3,
+.wysiwyg h4,
+.wysiwyg h5,
+.wysiwyg h6 {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+  line-height: 1em;
+}
+
+.wysiwyg h2 {
+  font-size: 1.8em;
+}
+
+.wysiwyg h3 {
+  font-size: 1.6em;
+}
+
+.wysiwyg h4 {
+  font-size: 1.4em;
+}
+
+.wysiwyg h5 {
+  font-size: 1.2em;
+}
+
+.wysiwyg h6 {
+  font-size: 1em;
+}
+
+/* Quotes, bolds, italics and other emphasis */
+.wysiwyg b,
+.wysiwyg strong {
+  font-weight: 600;
+}
+
+.wysiwyg i,
+.wysiwyg em {
+  font-style: italic;
+}
+
+.wysiwyg blockquote {
+  margin: 2em 3em;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.wysiwyg code {
+  font-family: Courier, 'Courier New', monospace;
+  padding: 20px;
+  background: #efefef;
+  display: block;
+}
+
+.wysiwyg pre code {
+  padding: 20px;
+  display: block;
+}
+
+/* Media */
+.wysiwyg img,
+.wysiwyg video,
+.wysiwyg param,
+.wysiwyg object,
+.wysiwyg embed {
+  max-width: 95%; /* Media shouldn't break the layout */
+}
+
+.wysiwyg img {
+  height: auto; /* If the image width is resized, having this will ensure the height is resized in all browsers */
+}

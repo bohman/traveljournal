@@ -1,0 +1,66 @@
+/* TYPOGRAPHIC ELEMENTS ---------------- */
+.title {
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 1px 1px 3px #400000;
+}
+
+
+/* INTERACTIVENESS ---------------- */
+/* Base button class */
+input[type="submit"],
+.pager .current,
+.pager .ellipsis,
+.pager a,
+.tabs a,
+.button {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: #400000;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: 5px solid #400000;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 1em;
+}
+
+/* Button active class */
+input[type="submit"]:focus,
+input[type="submit"]:hover,
+.tabs .active a,
+.pager .current,
+.pager a:hover,
+.pager a:focus,
+.tabs a:hover,
+.tabs a:focus,
+.button:hover,
+.button:focus {
+  color: #fff;
+  background: #f00;
+  border-color: #f00;
+  cursor: pointer;
+}
+
+
+/* ODDITIES ---------------- */
+.element-invisible {
+  display: none;
+}
+
+#colorbox,
+#cboxWrapper {
+  overflow: visible;
+}
+
+#cboxNext {
+  right: -5px;
+}
+
+#cboxOverlay {
+  background: #fff;
+}
