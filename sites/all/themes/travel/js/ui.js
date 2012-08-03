@@ -30,7 +30,7 @@
       //
       // Settings
       //
-      var sitepath = 'http://visereuropa.linusbohman.se'; //Where is the site located? If we need to reference images in JS (markers)
+      var sitepath = 'http://travel.linusbohman.se'; //Where is the site located? If we need to reference images in JS (markers)
       var requestUrl = sitepath + '/json/all';
       var setBounds = true;
 
