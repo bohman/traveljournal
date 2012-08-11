@@ -1,12 +1,11 @@
 name = TRAVEL admin theme
 description = A child theme based on zerofourzero and Seven, with additional enhancements for Linus' travel journal.
-package = Core
-version = VERSION
+version = 1.0
 core = 7.x
 base theme = zerofourzero
 
-scripts[] = ui.js
-stylesheets[screen][] = general.css
+scripts[] = traveladmin.js
+stylesheets[screen][] = traveladmin.css
 settings[shortcut_module_link] = 1
 regions[content] = Content
 regions[help] = Help

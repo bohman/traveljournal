@@ -1,0 +1,266 @@
+/* GENERAL FORM FEELING - NO LAYOUT OR SIZE HERE ---------- */
+.node-form > div > .form-wrapper legend + *,
+select,
+textarea,
+textarea.form-textarea,
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  padding: 10px;
+  font-weight: 300;
+  color: #5D5D5D;
+  border: 1px solid #D1D1D1;
+  border-radius: 5px;
+  background: rgb(249,249,249);
+  background: -moz-linear-gradient(top,  rgba(249,249,249,1) 0%, rgba(239,239,239,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,249,249,1)), color-stop(100%,rgba(239,239,239,1)));
+  background: -webkit-linear-gradient(top,  rgba(249,249,249,1) 0%,rgba(239,239,239,1) 100%);
+  background: -o-linear-gradient(top,  rgba(249,249,249,1) 0%,rgba(239,239,239,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(249,249,249,1) 0%,rgba(239,239,239,1) 100%);
+  background: linear-gradient(to bottom,  rgba(249,249,249,1) 0%,rgba(239,239,239,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#efefef',GradientType=0 );
+}
+
+.form-item input.error:focus,
+.form-item textarea.error:focus
+textarea.form-textarea:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+  outline: 0;
+  border-color: #E9CF16 !important; /* TODO: figure out why this isn't inherited on some textareas. Specificity problem. */
+  color: #1F1F1F;
+  background: rgb(255,255,196);
+  background: -moz-linear-gradient(top,  rgba(255,255,196,1) 0%, rgba(255,255,140,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,196,1)), color-stop(100%,rgba(255,255,140,1)));
+  background: -webkit-linear-gradient(top,  rgba(255,255,196,1) 0%,rgba(255,255,140,1) 100%);
+  background: -o-linear-gradient(top,  rgba(255,255,196,1) 0%,rgba(255,255,140,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(255,255,196,1) 0%,rgba(255,255,140,1) 100%);
+  background: linear-gradient(to bottom,  rgba(255,255,196,1) 0%,rgba(255,255,140,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffc4', endColorstr='#ffff8c',GradientType=0 );
+}
+
+.marker,
+.form-required {
+  color: #CD5151;
+}
+
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border-width: 1px;
+  border-color: #9C3E3E;
+  background: rgb(255,209,209);
+  background: -moz-linear-gradient(top,  rgba(255,209,209,1) 0%, rgba(255,191,191,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,209,209,1)), color-stop(100%,rgba(255,191,191,1)));
+  background: -webkit-linear-gradient(top,  rgba(255,209,209,1) 0%,rgba(255,191,191,1) 100%);
+  background: -o-linear-gradient(top,  rgba(255,209,209,1) 0%,rgba(255,191,191,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(255,209,209,1) 0%,rgba(255,191,191,1) 100%);
+  background: linear-gradient(to bottom,  rgba(255,209,209,1) 0%,rgba(255,191,191,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd1d1', endColorstr='#ffbfbf',GradientType=0 );
+}
+
+[disabled] {
+  opacity: 0.3;
+}
+
+
+/* NODE FORMS ----------
+   TODO: Extend to all forms in admin */
+
+/* Tensy tiny reset of some elements */
+.node-form fieldset .fieldset-wrapper,
+.node-form > div > .form-wrapper .form-item,
+.node-form > div > .form-item {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+.node-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.node-form .filter-help {
+  float: none;
+}
+
+.node-form fieldset .fieldset-legend {
+  margin-top: 0;
+  padding-left: 0;
+  position: static;
+  text-transform: inherit;
+}
+
+/*input.form-autocomplete, input.form-text, input.form-file, textarea.form-textarea, select.form-select {
+  padding: inherit;
+  border: inherit;
+  border-top-color: inherit;
+  background: inherit;
+  color: inherit;
+}*/
+
+
+/* Layout ---------- */
+/* Aligning labels and form elements */
+.node-form > div > .form-wrapper fieldset legend,
+.node-form > div > .form-item fieldset legend,
+.node-form > div > .form-wrapper label,
+.node-form > div > .form-item label {
+  display: inline-block;
+  width: 17%;
+  text-align: right;
+  margin-right: 3%;
+}
+
+.node-form > div > .form-wrapper fieldset legend,
+.node-form > div > .form-item fieldset legend {
+  float: left;
+}
+
+.node-form > div > .form-wrapper fieldset legend + *,
+.node-form > div > .form-item fieldset legend + *,
+.node-form > div > .form-wrapper label + *,
+.node-form > div > .form-item label + * {
+  width: 50%;
+  display: inline-block;
+}
+
+/* Moving some things into a right column */
+.node-form > div > div {
+  position: relative;
+}
+
+.node-form .right-column, /* Utility class for manually added objects to the node form */
+.node-form > div > .form-wrapper .description,
+.node-form > div > .form-item .description,
+.node-form .field-type-text-with-summary .filter-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 21%;
+  padding: 1%;
+  background: #efefef;
+  border: 4px solid #809DB9;
+  border-radius: 5px;
+}
+
+.node-form .right-column:before,
+.node-form .right-column:after,
+.node-form > div > .form-wrapper .description:before,
+.node-form > div > .form-item .description:before,
+.node-form > div > .form-wrapper .description:after,
+.node-form > div > .form-item .description:after,
+.node-form .field-type-text-with-summary .filter-wrapper:after,
+.node-form .field-type-text-with-summary .filter-wrapper:before {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.node-form .right-column:after,
+.node-form > div > .form-wrapper .description:after,
+.node-form > div > .form-item .description:after,
+.node-form .field-type-text-with-summary .filter-wrapper:after {
+  border-right-color: #efefef;
+  border-width: 20px;
+  top: 6px;
+}
+
+.node-form .right-column:before,
+.node-form > div > .form-wrapper .description:before,
+.node-form > div > .form-item .description:before,
+.node-form .field-type-text-with-summary .filter-wrapper:before {
+  border-right-color: #809DB9;
+  border-width: 26px;
+  top: 0px;
+}
+
+.node-form > div > .form-wrapper fieldset label,
+.node-form > div > .form-wrapper fieldset label + * {
+  vertical-align: middle;
+}
+
+.node-form > div > .form-wrapper fieldset label,
+.node-form > div > .form-wrapper fieldset label + * {
+  width: auto;
+}
+
+
+/* Readability: fonts, spacing and looks ---------- */
+.node-form .vertical-tabs,
+.node-form > div > .form-wrapper,
+.node-form > div > .form-item {
+  margin-top: 40px;
+}
+
+.node-form > div > .form-wrapper .form-item {
+  margin-top: 0;
+}
+
+.node-form > div > .form-wrapper legend,
+.node-form > div > .form-wrapper label,
+.node-form > div > .form-item label {
+  font-weight: 400;
+  color: #809DB9;
+}
+
+.node-form > div > .form-wrapper legend {
+  margin-top: 10px;
+}
+
+.node-form > div > .form-wrapper select,
+.node-form > div > .form-item select,
+.node-form > div > .form-wrapper textarea,
+.node-form > div > .form-item textarea,
+.node-form > div > .form-wrapper input[type="text"],
+.node-form > div > .form-item input[type="text"],
+.node-form > div > .form-wrapper legend,
+.node-form > div > .form-wrapper label,
+.node-form > div > .form-item label {
+  font-size: 15px;
+}
+
+.node-form > div > .form-wrapper legend + * {
+  padding: 1.5%;
+  width: 47% !important;
+}
+
+
+/* Some specific overrides ---------- */
+/* Node title */
+.node-form > div > .form-item-title {
+  background: #809DB9;
+  padding: 40px 33px;
+  margin-left: -33px;
+  margin-right: -33px;
+  margin-top: 10px;
+}
+
+.node-form > div > .form-item-title label {
+  color: #fff;
+}
+
+.node-form > div > .form-item-title label,
+.node-form > div > .form-item-title input[type="text"] {
+  font-size: 30px;
+}
+
+/* Form fields with summary */
+.node-form .field-type-text-with-summary.summary-visible .filter-wrapper {
+  top: 75px;
+}
+
+.node-form .field-type-text-with-summary .text-summary-wrapper {
+  margin-bottom: 10px;
+}
+
+.node-form .filter-help a {
+  padding: 0 20px 0 0;
+}

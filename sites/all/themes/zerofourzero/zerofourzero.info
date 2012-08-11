@@ -1,0 +1,16 @@
+name = zerofourzero
+description = A child theme to Seven, built to enhance the user facing parts of the admin interface. Designed to be used in conjunction with Overlay and Toolbar modules.
+version = 1.0
+core = 7.x
+base theme = seven
+
+scripts[] = zerofourzero.js
+stylesheets[screen][] = forms.css
+stylesheets[screen][] = messages.css
+settings[shortcut_module_link] = 1
+regions[content] = Content
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[sidebar_first] = First sidebar
+regions_hidden[] = sidebar_first
