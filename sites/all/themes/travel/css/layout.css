@@ -12,8 +12,9 @@ body {
   position: fixed;
   height: 100%;
   left: 0;
-  right: 300px;
-  border-right: 10px solid #400000;
+  right: 310px;
+  z-index: 1;
+  background: #1c2b5c;
 }
 
 #map-canvas {
@@ -21,11 +22,28 @@ body {
   height: 100%;
 }
 
+#administration-pane {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 300px;
+  z-index: 0;
+}
+
+body.show-admin #administration-pane {
+  right: 0;
+}
+
+#administration-pane,
 #content-pane {
-  float: right;
   width: 300px;
 }
 
+#content-pane {
+  float: right;
+}
+
+#administration-pane > *,
 #content-pane > * {
   margin-top: 20px;
   padding: 0 20px;

@@ -26,6 +26,7 @@ features[] = name
 ; - Page Top
 ; - Page Bottom
 
+regions[administration] = Administration
 regions[content] = Content
 regions[help] = Help
 regions[highlighted] = Highlighted
@@ -39,6 +40,7 @@ stylesheets[all][] = js/colorbox/colorbox.css
 
 ; Custom
 stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/animations.css
 stylesheets[all][] = css/wysiwyg.css
 stylesheets[all][] = css/objects.css
 stylesheets[all][] = css/style.css

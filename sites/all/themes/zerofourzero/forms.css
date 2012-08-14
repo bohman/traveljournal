@@ -1,4 +1,5 @@
 /* GENERAL FORM FEELING - NO LAYOUT OR SIZE HERE ---------- */
+.node-form > div label + .image-widget,
 .node-form > div > .form-wrapper legend + *,
 select,
 textarea,
@@ -94,19 +95,23 @@ input[type="number"]:focus {
   text-transform: inherit;
 }
 
-/*input.form-autocomplete, input.form-text, input.form-file, textarea.form-textarea, select.form-select {
-  padding: inherit;
-  border: inherit;
-  border-top-color: inherit;
+fieldset fieldset {
   background: inherit;
-  color: inherit;
-}*/
+}
 
+.container-inline-date .date-padding {
+  float: none;
+  padding: 0;
+}
+
+.date-no-float {
+  width: auto;
+}
 
 /* Layout ---------- */
 /* Aligning labels and form elements */
-.node-form > div > .form-wrapper fieldset legend,
-.node-form > div > .form-item fieldset legend,
+.node-form > div > .form-wrapper legend,
+.node-form > div > .form-item legend,
 .node-form > div > .form-wrapper label,
 .node-form > div > .form-item label {
   display: inline-block;
@@ -115,13 +120,13 @@ input[type="number"]:focus {
   margin-right: 3%;
 }
 
-.node-form > div > .form-wrapper fieldset legend,
-.node-form > div > .form-item fieldset legend {
+.node-form > div > .form-wrapper legend,
+.node-form > div > .form-item legend {
   float: left;
 }
 
-.node-form > div > .form-wrapper fieldset legend + *,
-.node-form > div > .form-item fieldset legend + *,
+.node-form > div > .form-wrapper legend + *,
+.node-form > div > .form-item legend + *,
 .node-form > div > .form-wrapper label + *,
 .node-form > div > .form-item label + * {
   width: 50%;
@@ -182,14 +187,29 @@ input[type="number"]:focus {
   top: 0px;
 }
 
-.node-form > div > .form-wrapper fieldset label,
-.node-form > div > .form-wrapper fieldset label + * {
+/* Handling form items within fieldsets */
+.node-form > div fieldset fieldset legend,
+.node-form > div fieldset label {
+  width: 33% !important;
+}
+
+.node-form > div fieldset label + * {
+  width: auto !important;
+}
+
+.node-form > div fieldset label,
+.node-form > div fieldset label + * {
   vertical-align: middle;
 }
 
-.node-form > div > .form-wrapper fieldset label,
-.node-form > div > .form-wrapper fieldset label + * {
-  width: auto;
+.node-form fieldset fieldset .description {
+  right: -35% !important;
+}
+
+.node-form fieldset fieldset legend + * {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
 }
 
 
@@ -200,6 +220,11 @@ input[type="number"]:focus {
   margin-top: 40px;
 }
 
+.node-form .fieldset-wrapper > * {
+  margin-top: 20px;
+}
+
+.node-form .fieldset-wrapper > *:first-child,
 .node-form > div > .form-wrapper .form-item {
   margin-top: 0;
 }

@@ -9,6 +9,8 @@
 
 /* INTERACTIVENESS ---------------- */
 /* Base button class */
+#administration-pane #user-login-form a,
+#administration-pane nav a,
 input[type="submit"],
 .pager .current,
 .pager .ellipsis,
@@ -30,6 +32,10 @@ input[type="submit"],
 }
 
 /* Button active class */
+#administration-pane #user-login-form a:focus,
+#administration-pane #user-login-form a:hover,
+#administration-pane nav a:focus,
+#administration-pane nav a:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover,
 .tabs .active a,
@@ -44,6 +50,27 @@ input[type="submit"]:hover,
   background: #f00;
   border-color: #f00;
   cursor: pointer;
+}
+
+/* Dark buttons */
+#administration-pane #user-login-form a,
+#administration-pane input[type="submit"],
+#administration-pane nav a,
+.button.dark {
+  background: #000;
+  border-color: #000;
+}
+
+#administration-pane #user-login-form a:hover,
+#administration-pane #user-login-form a:focus,
+#administration-pane input[type="submit"]:hover,
+#administration-pane input[type="submit"]:focus,
+#administration-pane nav a:hover,
+#administration-pane nav a:focus,
+.button.dark:hover,
+.button.dark:focus {
+  background: #222;
+  border-color: #222;
 }
 
 

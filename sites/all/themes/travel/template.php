@@ -6,18 +6,18 @@ drupal_add_css('http://fonts.googleapis.com/css?family=Open+Sans:300italic,400it
 
 
 // ------------------
-// template_preprocess_field()
+// hook_form_alter()
 //
 // Uses:
-// - Add wysiwyg class to body
-// - Add wysiwyg class to comment body
+// - Configure the create new account screen
+// - Move links in login block
 // ------------------
 
-function visereuropa_preprocess_field(&$variables) {
-  if($variables['element']['#field_name'] == 'body') {
-    $variables['classes_array'][] = 'wysiwyg';
-  }
-  if($variables['element']['#field_name'] == 'comment_body') {
-    $variables['classes_array'][] = 'wysiwyg';
+function travel_form_alter(&$form, &$form_state, $form_id) {
+  // Login block (in header)
+  switch($form_id) {
+    case 'user_login_block':
+      $form['links']['#weight'] = '255';
+    break;
   }
 }

@@ -1,4 +1,5 @@
 (function ($) {
+
   Drupal.behaviors.traveladmin = {
     attach: function (context, settings) {
 
@@ -32,7 +33,7 @@
         });
         formMarkersArray.push(marker);
       }
-      
+
       function formRemoveMarkers() {
         if (formMarkersArray) {
           for (i=0; i < formMarkersArray.length; i++) {

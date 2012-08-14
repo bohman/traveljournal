@@ -40,6 +40,75 @@ form > div:first-child {
   margin-top: 0;
 }
 
+input[type="text"],
+input[type="password"] {
+  padding: 10px 25px;
+  border: 1px solid #000;
+  color: #000;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 1em;
+  border-radius: 5px;
+  background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: 0;
+  background: #C9CE90;
+}
+
+
+/* Administration pane */
+#administration-pane > .admin-toggle,
+#administration-pane {
+  background: #400000;
+}
+
+#administration-pane > .admin-toggle:last-child {
+  position: fixed;
+  width: 10px;
+  top: 0;
+  bottom: 0;
+  right: 300px;
+  margin-top: 0;
+}
+
+#administration-pane > .admin-toggle:last-child:hover,
+#administration-pane > .admin-toggle:last-child:focus {
+  background: #f00;
+}
+
+#administration-pane nav a {
+  margin-top: 5px;
+}
+
+#administration-pane nav li:first-child a {
+  margin-top: 0;
+}
+
+#administration-pane nav a[href="/user"] {
+  margin-top: 20px;
+}
+
+#administration-pane #user-login-form .item-list {
+  margin-top: 5px;
+}
+
+#administration-pane a {
+  display: block !important;
+  text-align: center;
+}
+
+#administration-pane input[type="text"],
+#administration-pane input[type="password"] {
+  width: 208px;
+}
+
+#administration-pane input[type="submit"] {
+  width: 100%;
+}
+
 
 /* Content pane */
 #content-pane .gallery {

@@ -23,6 +23,32 @@
       }
 
 
+      //
+      // Admin toggle
+      //
+      function admin_init() {
+        $('#administration-pane .admin-toggle').click(function(){
+          $('body').toggleClass('show-admin');
+        });
+      }
+
+
+      //
+      // Removing autocomplete form colour in Chrome. Bug is tracked here:
+      // http://code.google.com/p/chromium/issues/detail?id=46543
+      //
+      if (navigator.userAgent.toLowerCase().indexOf("chrome") >= 0) {
+        $(window).load(function(){
+          $('input:-webkit-autofill').each(function(){
+            var text = $(this).val();
+            var name = $(this).attr('name');
+            $(this).after(this.outerHTML).remove();
+            $('input[name=' + name + ']').val(text);
+          });
+        });
+      }
+
+
       // -------------
       // MAP
       // -------------
@@ -177,6 +203,7 @@
       jQuery(document).ready(function() {
         map_init();
         gallery_init();
+        admin_init();
       });
 
 
