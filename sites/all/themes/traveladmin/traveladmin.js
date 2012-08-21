@@ -13,7 +13,7 @@
       var formMarkersArray = [];
 
       function insertMap() {
-        $('.node-form .field-name-field-location').append('<div class="right-column"><div id="map-canvas"></div></div');
+        $('form.node-location-form .field-name-field-location').append('<div class="right-column"><div id="map-canvas"></div></div');
         var latlng = new google.maps.LatLng(55.6,13);
         var mapOptions = {
           zoom: 8,
@@ -24,6 +24,7 @@
           scrollwheel: false
         }
         formMap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        setLatLongFromAddress();
       }
 
       function formAddMarker(location) {
@@ -55,7 +56,6 @@
               var longitude = results[0].geometry.location.lng();
               $('#edit-field-latitude-und-0-value').val(latitude);
               $('#edit-field-longitude-und-0-value').val(longitude);
-
               formMap.setZoom(10);
               formMap.setCenter(results[0].geometry.location);
               formRemoveMarkers();
@@ -73,7 +73,9 @@
         }
       }
 
-      insertMap();
+      if($('form.node-location-form').length){
+        insertMap();
+      }
 
       var fieldLocation = $('#edit-field-location-und-0-value');
       if(fieldLocation.length) {
