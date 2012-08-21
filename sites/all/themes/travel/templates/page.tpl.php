@@ -1,11 +1,15 @@
 <header class="site-head">
-  <h1 class="site-name"><?php print l('Travel Journal', '<front>', array('attributes' => array('class' => array('button')))); ?></h1>
+  <h1 class="site-name"><?php print l('Fonky Travels', '<front>', array('attributes' => array('class' => array('button')))); ?></h1>
   <?php if ($tabs) { print render($tabs); } ?>
 </header>
 
 
 <div id="map">
   <div id="map-canvas"></div>
+  <div id="map-filter">
+    <div class="users"></div>
+    <div class="categories"></div>
+  </div>
 </div>
 
 

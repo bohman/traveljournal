@@ -70,6 +70,8 @@
       var mapInit = false;
       var mapNodes;
       var markersArray = [];
+      var userFilter = [];
+      var catFilter = [];
 
 
       //
@@ -101,9 +103,9 @@
         }
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+        // Initiate filter and populate map
+        filter_init();
         doRequest(requestUrl);
-
-        mapInit = false;
       }
 
 
@@ -112,13 +114,16 @@
       // Ensures map is populated with proper information.
       //
       function buildNodes(mapNodes) {
+
         jQuery.each(mapNodes['nodes'], function(key, value) {
           var lat = this['node']['field_latitude'];
           var lon = this['node']['field_longitude'];
           var link = this['node']['link'];
-          var status = this['node']['status'];
-          var name = this['node']['title'];
-          addMarker(lat, lon, link, status, name);
+          var tid = this['node']['tid'];
+          var title = this['node']['title'];
+          var address = this['node']['address'];
+          var uid = this['node']['uid'];
+          addMarker(lat, lon, link, tid, title, address, uid);
         });
 
         for (i=0; i < markersArray.length; i++) {
@@ -130,17 +135,20 @@
         if(setBounds === true) {
           map.fitBounds(bounds);
         }
+
+        mapInit = false;
+        filterCheck();
       }
 
 
       //
       // General utilities
       //
-      function addMarker(lat, lon, link, status, name) {
+      function addMarker(lat, lon, link, tid, title, address, uid) {
         var markername = 'marker-heart';
 
-        if(status === 'Not yet visited, but want to') { markername = 'marker-stop' }
-        if(status === 'Visited but not documented') { markername = 'marker-snow' }
+        if(tid === '2') { markername = 'marker-stop' }
+        if(tid === '3') { markername = 'marker-snow' }
 
         var image = new google.maps.MarkerImage(
           sitepath + '/sites/all/themes/travel/img/' + markername + '.png',
@@ -170,7 +178,10 @@
           shadow: shadow,
           shape: shape,
           link: link,
-          title: name
+          title: address,
+          uid: uid,
+          tid: tid,
+          nodetitle: title
         });
 
         markersArray.push(marker);
@@ -193,6 +204,58 @@
         jQuery.getJSON(requestUrl, function(data){
           buildNodes(data);
         });
+      }
+
+
+      //
+      // Filter
+      //
+      function filter_init() {
+        // Add users to filter
+        jQuery.getJSON(sitepath + '/json/users', function(data){
+          jQuery.each(data['nodes'], function(key, value) {
+            $('#map-filter .users').append('<a class="filter-button" href="#" data-user="'+ this['node']['uid'] +'"><span>'+ this['node']['username'] +'</span></a>');
+          });
+        });
+
+        // Add categories to filter
+        jQuery.getJSON(sitepath + '/json/categories', function(data){
+          jQuery.each(data['nodes'], function(key, value) {
+            var inactive = '';
+            if(this['node']['termid'] == 2) {
+              inactive = 'inactive ';
+            } else {
+              inactive = '';
+            }
+            $('#map-filter .categories').prepend('<a class="'+ inactive +'filter-button" href="#" data-category="'+ this['node']['termid'] +'"><span>'+ this['node']['name'] +'</span></a>');
+          });
+        });
+
+        $('#map-filter').delegate('a', 'click', function(e){
+          $(this).toggleClass('inactive');
+          setTimeout(function(){
+            filterCheck();
+          }, 10);
+          e.preventDefault();
+        });
+      }
+
+      function filterCheck() {
+        userFilter.length = 0;
+        catFilter.length = 0;
+        $('#map-filter .users a.inactive').each(function(){
+          userFilter.push($(this).attr('data-user'));
+        });
+        $('#map-filter .categories a.inactive').each(function(){
+          catFilter.push($(this).attr('data-category'));
+        });
+        for (i=0; i < markersArray.length; i++) {
+          if((jQuery.inArray(markersArray[i].uid, userFilter) != -1) || (jQuery.inArray(markersArray[i].tid, catFilter) != -1)) {
+            markersArray[i].setVisible(false);
+          } else {
+            markersArray[i].setVisible(true);
+          }
+        }
       }
 
 

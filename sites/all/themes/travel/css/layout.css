@@ -22,6 +22,12 @@ body {
   height: 100%;
 }
 
+#map-filter {
+  position: fixed;
+  bottom: 20px;
+  right: 330px;
+}
+
 #administration-pane {
   position: fixed;
   top: 0;

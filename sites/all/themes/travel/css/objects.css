@@ -73,6 +73,50 @@ input[type="submit"]:hover,
   border-color: #222;
 }
 
+/* Filter buttons */
+.filter-button {
+  display: block;
+  border: 6px solid #400000 !important;
+  border: 0;
+  text-align: center;
+  border-radius: 100px;
+  overflow: hidden;
+  padding: 3px;
+}
+
+.filter-button span {
+  background: #400000;
+  display: block;
+  line-height: 60px;
+  height: 60px;
+  width: 60px;
+  border-radius: 100px;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+  border-color: #f00 !important;
+  opacity: 1 !important;
+}
+
+.filter-button:hover span,
+.filter-button:focus span {
+  background: #f00;
+}
+
+.filter-button.inactive {
+  border-color: transparent !important;
+}
+
+.filter-button.inactive span {
+  background: #403739;
+}
+
+.filter-button.inactive:hover,
+.filter-button.inactive:focus {
+  border-color: #403739 !important;
+}
+
 
 /* ODDITIES ---------------- */
 .element-invisible {

@@ -16,14 +16,15 @@ body {
 }
 
 a {
-  color: #400000;
+  color: #fff;
   text-decoration: none;
+  border-bottom: 1px solid #fff;
 }
 
 a:focus,
 a:hover {
   outline: 0;
-  color: #f00;
+  border-bottom-color: #f00;
 }
 
 label {
@@ -72,6 +73,7 @@ input[type="password"]:focus {
   bottom: 0;
   right: 300px;
   margin-top: 0;
+  border-bottom: 0;
 }
 
 #administration-pane > .admin-toggle:last-child:hover,
@@ -160,6 +162,7 @@ input[type="password"]:focus {
   background-image: url('../img/marker-stop.png');
 }
 
+
 /* Site head */
 .site-head a {
   margin-top: 5px;
@@ -173,4 +176,10 @@ input[type="password"]:focus {
 
 .tabs li {
   text-align: right;
+}
+
+
+/* Filter */
+#map-filter a {
+  margin-top: 5px;
 }
