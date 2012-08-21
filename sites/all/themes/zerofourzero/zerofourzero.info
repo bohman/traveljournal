@@ -5,8 +5,10 @@ core = 7.x
 base theme = seven
 
 scripts[] = zerofourzero.js
-stylesheets[screen][] = forms.css
-stylesheets[screen][] = messages.css
+
+stylesheets[screen][] = css/forms.css
+stylesheets[screen][] = css/messages.css
+
 settings[shortcut_module_link] = 1
 regions[content] = Content
 regions[help] = Help

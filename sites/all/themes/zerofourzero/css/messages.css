@@ -1,0 +1,36 @@
+/**
+ * @file
+ * Styles for system messages.
+ */
+
+div.messages {
+  border: 0 transparent;
+  line-height: 1.4em;
+  font-size: 16px;
+  padding: 20px 20px 20px 104px;
+  color: #0ba14b;
+  overflow: hidden;
+  background: #191B1F url('../img/icon-bird-happy.png') 20px 20px no-repeat;
+  border-radius: 5px;
+  border: 1px solid #000;
+  min-height: 64px;
+  font-weight: normal;
+}
+
+div.messages ul {
+  list-style-position: inside;
+}
+
+
+/* Error */
+div.messages.error {
+  color: #ed1c24;
+  background-image: url('../img/icon-bird-sad.png');
+}
+
+
+/* Warning */
+div.messages.warning {
+  color: #ffde16;
+  background-image: url('../img/icon-bird-neutral.png');
+}
