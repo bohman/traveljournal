@@ -107,17 +107,8 @@ input[type="submit"]:hover,
   background: #f00;
 }
 
-.filter-button.inactive {
+#map-filter a.filter-button.inactive {
   border-color: transparent !important;
-}
-
-.filter-button.inactive span {
-  background: #403739;
-}
-
-.filter-button.inactive:hover,
-.filter-button.inactive:focus {
-  border-color: #403739 !important;
 }
 
 .filter-button[data-category="1"] span,
