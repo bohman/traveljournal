@@ -82,6 +82,9 @@ input[type="submit"]:hover,
   border-radius: 100px;
   overflow: hidden;
   padding: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 9px;
 }
 
 .filter-button span {
@@ -117,6 +120,22 @@ input[type="submit"]:hover,
   border-color: #403739 !important;
 }
 
+.filter-button[data-category="1"] span,
+.filter-button[data-category="2"] span,
+.filter-button[data-category="3"] span {
+  text-indent: -9999em;
+  background-image: url('../img/legend-camera.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.filter-button[data-category="2"] span {
+  background-image: url('../img/legend-no.png');
+}
+
+.filter-button[data-category="3"] span {
+  background-image: url('../img/legend-plane.png');
+}
 
 /* ODDITIES ---------------- */
 .element-invisible {

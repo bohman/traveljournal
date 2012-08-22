@@ -59,6 +59,11 @@
       var sitepath = 'http://travel.linusbohman.se'; //Where is the site located? If we need to reference images in JS (markers)
       var requestUrl = sitepath + '/json/all';
       var setBounds = true;
+      var colors = {
+        //8: 'fallback',    // Karina
+        //9: 'fallback',    // Linus
+        11: 'purple'      // Johannes
+      };
 
 
       //
@@ -145,10 +150,12 @@
       // General utilities
       //
       function addMarker(lat, lon, link, tid, title, address, uid) {
-        var markername = 'marker-heart';
+        var markername = 'marker';
 
-        if(tid === '2') { markername = 'marker-stop' }
-        if(tid === '3') { markername = 'marker-snow' }
+        markername = markername + '-' + colors[uid];
+        if(tid === '1') { markername = markername + '-' + 'camera' }
+        if(tid === '2') { markername = markername + '-' + 'no' }
+        if(tid === '3') { markername = markername + '-' + 'plane' }
 
         var image = new google.maps.MarkerImage(
           sitepath + '/sites/all/themes/travel/img/' + markername + '.png',
@@ -227,7 +234,7 @@
             } else {
               inactive = '';
             }
-            $('#map-filter .categories').prepend('<a class="'+ inactive +'filter-button" href="#" data-category="'+ this['node']['termid'] +'"><span>'+ this['node']['name'] +'</span></a>');
+            $('#map-filter .categories').append('<a class="'+ inactive +'filter-button" href="#" data-category="'+ this['node']['termid'] +'"><span>'+ this['node']['name'] +'</span></a>');
           });
         });
 

@@ -148,18 +148,18 @@ input[type="password"]:focus {
 }
 
 #content-pane .map-legend li {
-  background: transparent url('../img/marker-heart.png') left top no-repeat;
+  background: transparent url('../img/marker-undefined-camera.png') left top no-repeat;
   padding-left: 50px;
   min-height: 60px;
   line-height: 41px;
 }
 
 #content-pane .map-legend .not-documented {
-  background-image: url('../img/marker-snow.png');
+  background-image: url('../img/marker-undefined-plane.png');
 }
 
 #content-pane .map-legend .not-visited {
-  background-image: url('../img/marker-stop.png');
+  background-image: url('../img/marker-undefined-no.png');
 }
 
 
@@ -182,4 +182,23 @@ input[type="password"]:focus {
 /* Filter */
 #map-filter a {
   margin-top: 5px;
+}
+
+/* Johannes */
+.filter-button[data-user="11"] {
+  border-color: #510f46 !important;
+}
+
+.filter-button[data-user="11"] span {
+  background: #510f46;
+}
+
+.filter-button[data-user="11"]:hover,
+.filter-button[data-user="11"]:focus {
+  border-color: #8a1d7c !important;
+}
+
+.filter-button[data-user="11"]:hover span,
+.filter-button[data-user="11"]:focus span {
+  background: #8a1d7c;
 }
