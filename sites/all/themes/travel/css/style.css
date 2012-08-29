@@ -186,7 +186,17 @@ input[type="password"]:focus {
 
 #map-filter a {
   margin-top: 5px;
+}
+
+#map-filter .users a {
   margin-left: 5px;
+}
+
+.filter-button.map-type span {
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  padding: 10px 0;
 }
 
 /* Elin */

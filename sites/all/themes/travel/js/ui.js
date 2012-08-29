@@ -71,6 +71,7 @@
       // Set up global variables
       //
       var bounds = new google.maps.LatLngBounds();
+      var filterbounds = new google.maps.LatLngBounds();
       var infoWindow = new google.maps.InfoWindow({ content: 'Loading information...' });
       var map;
       var mapInit = false;
@@ -230,7 +231,7 @@
         jQuery.getJSON(sitepath + '/json/categories', function(data){
           jQuery.each(data['nodes'], function(key, value) {
             var inactive = '';
-            if(this['node']['termid'] == 2) {
+            if(this['node']['termid'] == 2 || this['node']['termid'] == 3) {
               inactive = 'inactive ';
             } else {
               inactive = '';
@@ -239,16 +240,28 @@
           });
         });
 
-        $('#map-filter').delegate('a', 'click', function(e){
+        $('#map-filter .users, #map-filter .categories').delegate('a', 'click', function(e){
           $(this).toggleClass('inactive');
           setTimeout(function(){
             filterCheck();
           }, 10);
           e.preventDefault();
         });
+
+        $('#map-filter').delegate('a.map-type', 'click', function(e){
+          if($(this).hasClass('inactive')) {
+            map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+          } else {
+            map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+          }
+          $(this).toggleClass('inactive');
+          e.preventDefault();
+        });
+
       }
 
       function filterCheck() {
+        filterbounds = new google.maps.LatLngBounds();
         userFilter.length = 0;
         catFilter.length = 0;
         $('#map-filter .users a.inactive').each(function(){
@@ -262,7 +275,11 @@
             markersArray[i].setVisible(false);
           } else {
             markersArray[i].setVisible(true);
+            filterbounds.extend(markersArray[i].getPosition());
           }
+        }
+        if(setBounds === true) {
+          map.fitBounds(filterbounds);
         }
       }
 

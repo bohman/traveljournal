@@ -9,6 +9,7 @@
   <div id="map-filter">
     <div class="categories"></div>
     <div class="users"></div>
+    <a href="#" class="filter-button map-type inactive"><span>Display names</span></a>
   </div>
 </div>
 
