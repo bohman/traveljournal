@@ -9,7 +9,6 @@ drupal_add_css('http://fonts.googleapis.com/css?family=Open+Sans:300italic,400it
 // hook_form_alter()
 //
 // Uses:
-// - Configure the create new account screen
 // - Move links in login block
 // ------------------
 

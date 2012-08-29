@@ -60,9 +60,10 @@
       var requestUrl = sitepath + '/json/all';
       var setBounds = true;
       var colors = {
-        //8: 'fallback',    // Karina
-        //9: 'fallback',    // Linus
-        11: 'purple'      // Johannes
+        8: 'red',         // Karina
+        9: 'green',       // Linus
+        11: 'purple',     // Johannes
+        12: 'yellow'      // Elin
       };
 
 

@@ -7,8 +7,8 @@
 <div id="map">
   <div id="map-canvas"></div>
   <div id="map-filter">
-    <div class="users"></div>
     <div class="categories"></div>
+    <div class="users"></div>
   </div>
 </div>
 

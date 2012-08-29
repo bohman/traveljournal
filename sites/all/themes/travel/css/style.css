@@ -180,8 +180,32 @@ input[type="password"]:focus {
 
 
 /* Filter */
+#map-filter > div {
+  display: inline-block;
+}
+
 #map-filter a {
   margin-top: 5px;
+  margin-left: 5px;
+}
+
+/* Elin */
+.filter-button[data-user="12"] {
+  border-color: #514d0f !important;
+}
+
+.filter-button[data-user="12"] span {
+  background: #514d0f;
+}
+
+.filter-button[data-user="12"]:hover,
+.filter-button[data-user="12"]:focus {
+  border-color: #8a811d !important;
+}
+
+.filter-button[data-user="12"]:hover span,
+.filter-button[data-user="12"]:focus span {
+  background: #8a811d;
 }
 
 /* Johannes */
@@ -201,4 +225,42 @@ input[type="password"]:focus {
 .filter-button[data-user="11"]:hover span,
 .filter-button[data-user="11"]:focus span {
   background: #8a1d7c;
+}
+
+/* Karina */
+.filter-button[data-user="8"] {
+  border-color: #510f0f !important;
+}
+
+.filter-button[data-user="8"] span {
+  background: #510f0f;
+}
+
+.filter-button[data-user="8"]:hover,
+.filter-button[data-user="8"]:focus {
+  border-color: #8a1d1d !important;
+}
+
+.filter-button[data-user="8"]:hover span,
+.filter-button[data-user="8"]:focus span {
+  background: #8a1d1d;
+}
+
+/* Linus */
+.filter-button[data-user="9"] {
+  border-color: #0f510f !important;
+}
+
+.filter-button[data-user="9"] span {
+  background: #0f510f;
+}
+
+.filter-button[data-user="9"]:hover,
+.filter-button[data-user="9"]:focus {
+  border-color: #438a1d !important;
+}
+
+.filter-button[data-user="9"]:hover span,
+.filter-button[data-user="9"]:focus span {
+  background: #438a1d;
 }
